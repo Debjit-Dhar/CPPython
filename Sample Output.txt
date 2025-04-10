@@ -1,0 +1,879 @@
+Generated tokens in order:
+['\n' -> NEWLINE]
+['for' -> FOR]
+['s' -> IDENTIFIER]
+['in' -> IN]
+['[' -> OPEN_BRACKET]
+["This" -> STRING]
+[',' -> COMMA]
+["is" -> STRING]
+[',' -> COMMA]
+["a" -> STRING]
+[',' -> COMMA]
+["Python" -> STRING]
+[',' -> COMMA]
+["parser" -> STRING]
+[']' -> CLOSE_BRACKET]
+[':' -> COLON]
+['\n' -> NEWLINE]
+['for' -> FOR]
+['c' -> IDENTIFIER]
+['in' -> IN]
+['s' -> IDENTIFIER]
+[':' -> COLON]
+['\n' -> NEWLINE]
+['print' -> PRINT]
+['(' -> OPEN_PAREN]
+['c' -> IDENTIFIER]
+[')' -> CLOSE_PAREN]
+['\n' -> NEWLINE]
+['print' -> PRINT]
+['(' -> OPEN_PAREN]
+['True' -> TRUE_VALUE]
+[',' -> COMMA]
+['str' -> STR_TYPE]
+['(' -> OPEN_PAREN]
+['False' -> FALSE_VALUE]
+[')' -> CLOSE_PAREN]
+[',' -> COMMA]
+['int' -> INT_TYPE]
+['(' -> OPEN_PAREN]
+['True' -> TRUE_VALUE]
+[')' -> CLOSE_PAREN]
+[',' -> COMMA]
+['list' -> LIST_TYPE]
+['(' -> OPEN_PAREN]
+["False" -> STRING]
+[')' -> CLOSE_PAREN]
+[')' -> CLOSE_PAREN]
+['\n' -> NEWLINE]
+['print' -> PRINT]
+['(' -> OPEN_PAREN]
+['2' -> INTEGER]
+['*' -> MULT]
+['3' -> INTEGER]
+['+' -> PLUS]
+['5' -> INTEGER]
+['/' -> DIV]
+['6' -> INTEGER]
+[')' -> CLOSE_PAREN]
+['\n' -> NEWLINE]
+['x' -> IDENTIFIER]
+['=' -> EQUALS]
+["Hello World!" -> STRING]
+['\n' -> NEWLINE]
+['y' -> IDENTIFIER]
+['=' -> EQUALS]
+['12' -> INTEGER]
+['-' -> MINUS]
+['55' -> INTEGER]
+['\n' -> NEWLINE]
+['print' -> PRINT]
+['(' -> OPEN_PAREN]
+['x' -> IDENTIFIER]
+[',' -> COMMA]
+['y' -> IDENTIFIER]
+[')' -> CLOSE_PAREN]
+['\n' -> NEWLINE]
+['endfor' -> ENDFOR]
+['\n' -> NEWLINE]
+['endfor' -> ENDFOR]
+[END_OF_FILE]
+
+
+Identifiers used from symbol table:
+x
+c
+y
+s
+
+
+
+Stack is (END_OF_FILE | state 0), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <epsilon!>
+Going to state 55
+
+Stack is (END_OF_FILE | state 0), (<statement> | state 55), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement>
+Going to state 62
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (NEWLINE | state 57), current next input token is ['for' -> FOR]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), current next input token is ['for' -> FOR]
+We'll do shift to state 47
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), current next input token is ['s' -> IDENTIFIER]
+We'll do shift to state 48
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), current next input token is ['in' -> IN]
+We'll do shift to state 49
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), current next input token is ['[' -> OPEN_BRACKET]
+We'll do shift to state 8
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), current next input token is ["This" -> STRING]
+We'll do shift to state 15
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (STRING | state 15), current next input token is [',' -> COMMA]
+We'll do reduce <factor> ::= STRING
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<factor> | state 21), current next input token is [',' -> COMMA]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<term> | state 22), current next input token is [',' -> COMMA]
+We'll do reduce <expression> ::= <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression> | state 28), current next input token is [',' -> COMMA]
+We'll do reduce <expression_list> ::= <expression>
+Going to state 41
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), current next input token is [',' -> COMMA]
+We'll do shift to state 34
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), current next input token is ["is" -> STRING]
+We'll do shift to state 15
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (STRING | state 15), current next input token is [',' -> COMMA]
+We'll do reduce <factor> ::= STRING
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<factor> | state 21), current next input token is [',' -> COMMA]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<term> | state 22), current next input token is [',' -> COMMA]
+We'll do reduce <expression> ::= <term>
+Going to state 35
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<expression> | state 35), current next input token is [',' -> COMMA]
+We'll do reduce <expression_list> ::= <expression_list> COMMA <expression>
+Going to state 41
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), current next input token is [',' -> COMMA]
+We'll do shift to state 34
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), current next input token is ["a" -> STRING]
+We'll do shift to state 15
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (STRING | state 15), current next input token is [',' -> COMMA]
+We'll do reduce <factor> ::= STRING
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<factor> | state 21), current next input token is [',' -> COMMA]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<term> | state 22), current next input token is [',' -> COMMA]
+We'll do reduce <expression> ::= <term>
+Going to state 35
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<expression> | state 35), current next input token is [',' -> COMMA]
+We'll do reduce <expression_list> ::= <expression_list> COMMA <expression>
+Going to state 41
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), current next input token is [',' -> COMMA]
+We'll do shift to state 34
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), current next input token is ["Python" -> STRING]
+We'll do shift to state 15
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (STRING | state 15), current next input token is [',' -> COMMA]
+We'll do reduce <factor> ::= STRING
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<factor> | state 21), current next input token is [',' -> COMMA]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<term> | state 22), current next input token is [',' -> COMMA]
+We'll do reduce <expression> ::= <term>
+Going to state 35
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<expression> | state 35), current next input token is [',' -> COMMA]
+We'll do reduce <expression_list> ::= <expression_list> COMMA <expression>
+Going to state 41
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), current next input token is [',' -> COMMA]
+We'll do shift to state 34
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), current next input token is ["parser" -> STRING]
+We'll do shift to state 15
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (STRING | state 15), current next input token is [']' -> CLOSE_BRACKET]
+We'll do reduce <factor> ::= STRING
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<factor> | state 21), current next input token is [']' -> CLOSE_BRACKET]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<term> | state 22), current next input token is [']' -> CLOSE_BRACKET]
+We'll do reduce <expression> ::= <term>
+Going to state 35
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (COMMA | state 34), (<expression> | state 35), current next input token is [']' -> CLOSE_BRACKET]
+We'll do reduce <expression_list> ::= <expression_list> COMMA <expression>
+Going to state 41
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), current next input token is [']' -> CLOSE_BRACKET]
+We'll do shift to state 42
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (OPEN_BRACKET | state 8), (<expression_list> | state 41), (CLOSE_BRACKET | state 42), current next input token is [':' -> COLON]
+We'll do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+Going to state 18
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<list> | state 18), current next input token is [':' -> COLON]
+We'll do reduce <factor> ::= <list>
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<factor> | state 21), current next input token is [':' -> COLON]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<term> | state 22), current next input token is [':' -> COLON]
+We'll do reduce <expression> ::= <term>
+Going to state 50
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), current next input token is [':' -> COLON]
+We'll do shift to state 51
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <epsilon!>
+Going to state 55
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement> | state 55), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['for' -> FOR]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['for' -> FOR]
+We'll do shift to state 47
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), current next input token is ['c' -> IDENTIFIER]
+We'll do shift to state 48
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), current next input token is ['in' -> IN]
+We'll do shift to state 49
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), current next input token is ['s' -> IDENTIFIER]
+We'll do shift to state 12
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (IDENTIFIER | state 12), current next input token is [':' -> COLON]
+We'll do reduce <factor> ::= IDENTIFIER
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<factor> | state 21), current next input token is [':' -> COLON]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<term> | state 22), current next input token is [':' -> COLON]
+We'll do reduce <expression> ::= <term>
+Going to state 50
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), current next input token is [':' -> COLON]
+We'll do shift to state 51
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <epsilon!>
+Going to state 55
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement> | state 55), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['print' -> PRINT]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['print' -> PRINT]
+We'll do shift to state 16
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), current next input token is ['(' -> OPEN_PAREN]
+We'll do shift to state 17
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), current next input token is ['c' -> IDENTIFIER]
+We'll do shift to state 12
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (IDENTIFIER | state 12), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <factor> ::= IDENTIFIER
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<factor> | state 21), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<term> | state 22), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression> ::= <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression_list> ::= <expression>
+Going to state 37
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), current next input token is [')' -> CLOSE_PAREN]
+We'll do shift to state 38
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (CLOSE_PAREN | state 38), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+Going to state 53
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<function_call> | state 53), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <function_call>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['print' -> PRINT]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['print' -> PRINT]
+We'll do shift to state 16
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), current next input token is ['(' -> OPEN_PAREN]
+We'll do shift to state 17
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), current next input token is ['True' -> TRUE_VALUE]
+We'll do shift to state 11
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (TRUE_VALUE | state 11), current next input token is [',' -> COMMA]
+We'll do reduce <factor> ::= TRUE_VALUE
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<factor> | state 21), current next input token is [',' -> COMMA]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<term> | state 22), current next input token is [',' -> COMMA]
+We'll do reduce <expression> ::= <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), current next input token is [',' -> COMMA]
+We'll do reduce <expression_list> ::= <expression>
+Going to state 37
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), current next input token is [',' -> COMMA]
+We'll do shift to state 34
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), current next input token is ['str' -> STR_TYPE]
+We'll do shift to state 3
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (STR_TYPE | state 3), current next input token is ['(' -> OPEN_PAREN]
+We'll do reduce <datatype> ::= STR_TYPE
+Going to state 19
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), current next input token is ['(' -> OPEN_PAREN]
+We'll do shift to state 20
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), current next input token is ['False' -> FALSE_VALUE]
+We'll do shift to state 10
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (FALSE_VALUE | state 10), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <factor> ::= FALSE_VALUE
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<factor> | state 21), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<term> | state 22), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression> ::= <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression> | state 28), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression_list> ::= <expression>
+Going to state 33
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression_list> | state 33), current next input token is [')' -> CLOSE_PAREN]
+We'll do shift to state 36
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression_list> | state 33), (CLOSE_PAREN | state 36), current next input token is [',' -> COMMA]
+We'll do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+Going to state 25
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<function_call> | state 25), current next input token is [',' -> COMMA]
+We'll do reduce <factor> ::= <function_call>
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<factor> | state 21), current next input token is [',' -> COMMA]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<term> | state 22), current next input token is [',' -> COMMA]
+We'll do reduce <expression> ::= <term>
+Going to state 35
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<expression> | state 35), current next input token is [',' -> COMMA]
+We'll do reduce <expression_list> ::= <expression_list> COMMA <expression>
+Going to state 37
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), current next input token is [',' -> COMMA]
+We'll do shift to state 34
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), current next input token is ['int' -> INT_TYPE]
+We'll do shift to state 5
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (INT_TYPE | state 5), current next input token is ['(' -> OPEN_PAREN]
+We'll do reduce <datatype> ::= INT_TYPE
+Going to state 19
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), current next input token is ['(' -> OPEN_PAREN]
+We'll do shift to state 20
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), current next input token is ['True' -> TRUE_VALUE]
+We'll do shift to state 11
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (TRUE_VALUE | state 11), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <factor> ::= TRUE_VALUE
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<factor> | state 21), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<term> | state 22), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression> ::= <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression> | state 28), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression_list> ::= <expression>
+Going to state 33
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression_list> | state 33), current next input token is [')' -> CLOSE_PAREN]
+We'll do shift to state 36
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression_list> | state 33), (CLOSE_PAREN | state 36), current next input token is [',' -> COMMA]
+We'll do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+Going to state 25
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<function_call> | state 25), current next input token is [',' -> COMMA]
+We'll do reduce <factor> ::= <function_call>
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<factor> | state 21), current next input token is [',' -> COMMA]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<term> | state 22), current next input token is [',' -> COMMA]
+We'll do reduce <expression> ::= <term>
+Going to state 35
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<expression> | state 35), current next input token is [',' -> COMMA]
+We'll do reduce <expression_list> ::= <expression_list> COMMA <expression>
+Going to state 37
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), current next input token is [',' -> COMMA]
+We'll do shift to state 34
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), current next input token is ['list' -> LIST_TYPE]
+We'll do shift to state 1
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (LIST_TYPE | state 1), current next input token is ['(' -> OPEN_PAREN]
+We'll do reduce <datatype> ::= LIST_TYPE
+Going to state 19
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), current next input token is ['(' -> OPEN_PAREN]
+We'll do shift to state 20
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), current next input token is ["False" -> STRING]
+We'll do shift to state 15
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (STRING | state 15), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <factor> ::= STRING
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<factor> | state 21), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<term> | state 22), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression> ::= <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression> | state 28), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression_list> ::= <expression>
+Going to state 33
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression_list> | state 33), current next input token is [')' -> CLOSE_PAREN]
+We'll do shift to state 36
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<datatype> | state 19), (OPEN_PAREN | state 20), (<expression_list> | state 33), (CLOSE_PAREN | state 36), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+Going to state 25
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<function_call> | state 25), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <factor> ::= <function_call>
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<factor> | state 21), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<term> | state 22), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression> ::= <term>
+Going to state 35
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<expression> | state 35), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression_list> ::= <expression_list> COMMA <expression>
+Going to state 37
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), current next input token is [')' -> CLOSE_PAREN]
+We'll do shift to state 38
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (CLOSE_PAREN | state 38), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+Going to state 53
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<function_call> | state 53), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <function_call>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['print' -> PRINT]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['print' -> PRINT]
+We'll do shift to state 16
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), current next input token is ['(' -> OPEN_PAREN]
+We'll do shift to state 17
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), current next input token is ['2' -> INTEGER]
+We'll do shift to state 13
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (INTEGER | state 13), current next input token is ['*' -> MULT]
+We'll do reduce <factor> ::= INTEGER
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<factor> | state 21), current next input token is ['*' -> MULT]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<term> | state 22), current next input token is ['*' -> MULT]
+We'll do shift to state 23
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<term> | state 22), (MULT | state 23), current next input token is ['3' -> INTEGER]
+We'll do shift to state 13
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<term> | state 22), (MULT | state 23), (INTEGER | state 13), current next input token is ['+' -> PLUS]
+We'll do reduce <factor> ::= INTEGER
+Going to state 24
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<term> | state 22), (MULT | state 23), (<factor> | state 24), current next input token is ['+' -> PLUS]
+We'll do reduce <term> ::= <term> MULT <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<term> | state 22), current next input token is ['+' -> PLUS]
+We'll do reduce <expression> ::= <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), current next input token is ['+' -> PLUS]
+We'll do shift to state 29
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), (PLUS | state 29), current next input token is ['5' -> INTEGER]
+We'll do shift to state 13
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), (PLUS | state 29), (INTEGER | state 13), current next input token is ['/' -> DIV]
+We'll do reduce <factor> ::= INTEGER
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), (PLUS | state 29), (<factor> | state 21), current next input token is ['/' -> DIV]
+We'll do reduce <term> ::= <factor>
+Going to state 30
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), (PLUS | state 29), (<term> | state 30), current next input token is ['/' -> DIV]
+We'll do shift to state 26
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), (PLUS | state 29), (<term> | state 30), (DIV | state 26), current next input token is ['6' -> INTEGER]
+We'll do shift to state 13
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), (PLUS | state 29), (<term> | state 30), (DIV | state 26), (INTEGER | state 13), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <factor> ::= INTEGER
+Going to state 27
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), (PLUS | state 29), (<term> | state 30), (DIV | state 26), (<factor> | state 27), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <term> ::= <term> DIV <factor>
+Going to state 30
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), (PLUS | state 29), (<term> | state 30), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression> ::= <expression> PLUS <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression_list> ::= <expression>
+Going to state 37
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), current next input token is [')' -> CLOSE_PAREN]
+We'll do shift to state 38
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (CLOSE_PAREN | state 38), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+Going to state 53
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<function_call> | state 53), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <function_call>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['x' -> IDENTIFIER]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['x' -> IDENTIFIER]
+We'll do shift to state 6
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), current next input token is ['=' -> EQUALS]
+We'll do shift to state 45
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), current next input token is ["Hello World!" -> STRING]
+We'll do shift to state 15
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (STRING | state 15), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <factor> ::= STRING
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<factor> | state 21), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<term> | state 22), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <expression> ::= <term>
+Going to state 46
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<expression> | state 46), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <assignment> ::= IDENTIFIER EQUALS <expression>
+Going to state 54
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<assignment> | state 54), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <assignment>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['y' -> IDENTIFIER]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['y' -> IDENTIFIER]
+We'll do shift to state 6
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), current next input token is ['=' -> EQUALS]
+We'll do shift to state 45
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), current next input token is ['12' -> INTEGER]
+We'll do shift to state 13
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (INTEGER | state 13), current next input token is ['-' -> MINUS]
+We'll do reduce <factor> ::= INTEGER
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<factor> | state 21), current next input token is ['-' -> MINUS]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<term> | state 22), current next input token is ['-' -> MINUS]
+We'll do reduce <expression> ::= <term>
+Going to state 46
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<expression> | state 46), current next input token is ['-' -> MINUS]
+We'll do shift to state 31
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<expression> | state 46), (MINUS | state 31), current next input token is ['55' -> INTEGER]
+We'll do shift to state 13
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<expression> | state 46), (MINUS | state 31), (INTEGER | state 13), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <factor> ::= INTEGER
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<expression> | state 46), (MINUS | state 31), (<factor> | state 21), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <term> ::= <factor>
+Going to state 32
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<expression> | state 46), (MINUS | state 31), (<term> | state 32), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <expression> ::= <expression> MINUS <term>
+Going to state 46
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (IDENTIFIER | state 6), (EQUALS | state 45), (<expression> | state 46), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <assignment> ::= IDENTIFIER EQUALS <expression>
+Going to state 54
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<assignment> | state 54), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <assignment>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['print' -> PRINT]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['print' -> PRINT]
+We'll do shift to state 16
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), current next input token is ['(' -> OPEN_PAREN]
+We'll do shift to state 17
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), current next input token is ['x' -> IDENTIFIER]
+We'll do shift to state 12
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (IDENTIFIER | state 12), current next input token is [',' -> COMMA]
+We'll do reduce <factor> ::= IDENTIFIER
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<factor> | state 21), current next input token is [',' -> COMMA]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<term> | state 22), current next input token is [',' -> COMMA]
+We'll do reduce <expression> ::= <term>
+Going to state 28
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression> | state 28), current next input token is [',' -> COMMA]
+We'll do reduce <expression_list> ::= <expression>
+Going to state 37
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), current next input token is [',' -> COMMA]
+We'll do shift to state 34
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), current next input token is ['y' -> IDENTIFIER]
+We'll do shift to state 12
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (IDENTIFIER | state 12), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <factor> ::= IDENTIFIER
+Going to state 21
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<factor> | state 21), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <term> ::= <factor>
+Going to state 22
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<term> | state 22), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression> ::= <term>
+Going to state 35
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (COMMA | state 34), (<expression> | state 35), current next input token is [')' -> CLOSE_PAREN]
+We'll do reduce <expression_list> ::= <expression_list> COMMA <expression>
+Going to state 37
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), current next input token is [')' -> CLOSE_PAREN]
+We'll do shift to state 38
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (PRINT | state 16), (OPEN_PAREN | state 17), (<expression_list> | state 37), (CLOSE_PAREN | state 38), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+Going to state 53
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<function_call> | state 53), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <function_call>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['endfor' -> ENDFOR]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['endfor' -> ENDFOR]
+We'll do reduce <statement> ::= <epsilon!>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['endfor' -> ENDFOR]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['endfor' -> ENDFOR]
+We'll do shift to state 59
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (ENDFOR | state 59), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+Going to state 52
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<for_loop> | state 52), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement> ::= <for_loop>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['\n' -> NEWLINE]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['\n' -> NEWLINE]
+We'll do shift to state 57
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (NEWLINE | state 57), current next input token is ['endfor' -> ENDFOR]
+We'll do reduce <st_end> ::= NEWLINE
+Going to state 60
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), current next input token is ['endfor' -> ENDFOR]
+We'll do reduce <statement> ::= <epsilon!>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (<st_end> | state 60), (<statement> | state 61), current next input token is ['endfor' -> ENDFOR]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 56
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), current next input token is ['endfor' -> ENDFOR]
+We'll do shift to state 59
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (FOR | state 47), (IDENTIFIER | state 48), (IN | state 49), (<expression> | state 50), (COLON | state 51), (<statement_list> | state 56), (ENDFOR | state 59), current next input token is [END_OF_FILE]
+We'll do reduce <for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+Going to state 52
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (<for_loop> | state 52), current next input token is [END_OF_FILE]
+We'll do reduce <statement> ::= <for_loop>
+Going to state 61
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), (<st_end> | state 60), (<statement> | state 61), current next input token is [END_OF_FILE]
+We'll do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+Going to state 62
+
+Stack is (END_OF_FILE | state 0), (<statement_list> | state 62), current next input token is [END_OF_FILE]
+We'll do ACCEPT.
+Input code has been accepted.

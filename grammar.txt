@@ -1,0 +1,1818 @@
+Language information:
+Grammar rules:
+
+<program> ::= <statement_list>
+
+<statement_list> ::= <statement> | <statement_list> <st_end> <statement>
+
+<statement> ::= <epsilon!> | <for_loop> | <function_call> | <assignment>
+
+<st_end> ::= NEWLINE | SEMICOLON
+
+<assignment> ::= IDENTIFIER EQUALS <expression>
+
+<function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN | IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN | PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+
+<expression_list> ::= <epsilon!> | <expression_list> COMMA <expression> | <expression>
+
+<expression> ::= <expression> MINUS <term> | <expression> PLUS <term> | <term>
+
+<term> ::= <term> DIV <factor> | <term> MULT <factor> | <factor>
+
+<factor> ::= OPEN_PAREN <expression> CLOSE_PAREN | <function_call> | FALSE_VALUE | TRUE_VALUE | <list> | STRING | FLOAT | INTEGER | IDENTIFIER
+
+<datatype> ::= BOOL_TYPE | STR_TYPE | FLOAT_TYPE | INT_TYPE
+
+<for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+
+<list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+
+First sets:
+<program> ::= {<empty string>, IDENTIFIER, PRINT, FOR, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE, SEMICOLON, NEWLINE}
+<statement_list> ::= {<empty string>, IDENTIFIER, PRINT, FOR, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE, SEMICOLON, NEWLINE}
+<statement> ::= {<empty string>, IDENTIFIER, PRINT, FOR, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE}
+<st_end> ::= {SEMICOLON, NEWLINE}
+<assignment> ::= {IDENTIFIER}
+<function_call> ::= {IDENTIFIER, PRINT, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE}
+<expression_list> ::= {<empty string>, IDENTIFIER, INTEGER, FLOAT, STRING, PRINT, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE, TRUE_VALUE, FALSE_VALUE, OPEN_PAREN, OPEN_BRACKET, COMMA}
+<expression> ::= {IDENTIFIER, INTEGER, FLOAT, STRING, PRINT, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE, TRUE_VALUE, FALSE_VALUE, OPEN_PAREN, OPEN_BRACKET}
+<term> ::= {IDENTIFIER, INTEGER, FLOAT, STRING, PRINT, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE, TRUE_VALUE, FALSE_VALUE, OPEN_PAREN, OPEN_BRACKET}
+<factor> ::= {IDENTIFIER, INTEGER, FLOAT, STRING, PRINT, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE, TRUE_VALUE, FALSE_VALUE, OPEN_PAREN, OPEN_BRACKET}
+<datatype> ::= {INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE}
+<for_loop> ::= {FOR}
+<list> ::= {OPEN_BRACKET}
+
+Follow sets:
+<program> ::= {END_OF_FILE}
+<statement_list> ::= {ENDFOR, SEMICOLON, NEWLINE, END_OF_FILE}
+<statement> ::= {ENDFOR, SEMICOLON, NEWLINE, END_OF_FILE}
+<st_end> ::= {IDENTIFIER, PRINT, FOR, ENDFOR, INT_TYPE, FLOAT_TYPE, STR_TYPE, BOOL_TYPE, SEMICOLON, NEWLINE, END_OF_FILE}
+<assignment> ::= {ENDFOR, SEMICOLON, NEWLINE, END_OF_FILE}
+<function_call> ::= {PLUS, MINUS, MULT, DIV, ENDFOR, CLOSE_PAREN, CLOSE_BRACKET, COMMA, COLON, SEMICOLON, NEWLINE, END_OF_FILE}
+<expression_list> ::= {CLOSE_PAREN, CLOSE_BRACKET, COMMA}
+<expression> ::= {PLUS, MINUS, ENDFOR, CLOSE_PAREN, CLOSE_BRACKET, COMMA, COLON, SEMICOLON, NEWLINE, END_OF_FILE}
+<term> ::= {PLUS, MINUS, MULT, DIV, ENDFOR, CLOSE_PAREN, CLOSE_BRACKET, COMMA, COLON, SEMICOLON, NEWLINE, END_OF_FILE}
+<factor> ::= {PLUS, MINUS, MULT, DIV, ENDFOR, CLOSE_PAREN, CLOSE_BRACKET, COMMA, COLON, SEMICOLON, NEWLINE, END_OF_FILE}
+<datatype> ::= {OPEN_PAREN}
+<for_loop> ::= {ENDFOR, SEMICOLON, NEWLINE, END_OF_FILE}
+<list> ::= {PLUS, MINUS, MULT, DIV, ENDFOR, CLOSE_PAREN, CLOSE_BRACKET, COMMA, COLON, SEMICOLON, NEWLINE, END_OF_FILE}
+
+
+
+State transitions:
+
+State 0:
+This is the start state
+Corresponding symbol is END_OF_FILE
+<program> ::= . <statement_list>
+<statement_list> ::= . <statement>
+<statement_list> ::= . <statement_list> <st_end> <statement>
+<statement> ::=  .
+<statement> ::= . <assignment>
+<statement> ::= . <for_loop>
+<statement> ::= . <function_call>
+<assignment> ::= . IDENTIFIER EQUALS <expression>
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<for_loop> ::= . FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+
+On <statement_list>, go to 61
+On <statement>, go to 54
+On <assignment>, go to 53
+On <function_call>, go to 52
+On <datatype>, go to 18
+On <for_loop>, go to 51
+On FOR, go to 46
+On PRINT, go to 15
+On IDENTIFIER, go to 5
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+
+
+State 1:
+Corresponding symbol is BOOL_TYPE
+<datatype> ::= BOOL_TYPE .
+
+
+
+State 2:
+Corresponding symbol is STR_TYPE
+<datatype> ::= STR_TYPE .
+
+
+
+State 3:
+Corresponding symbol is FLOAT_TYPE
+<datatype> ::= FLOAT_TYPE .
+
+
+
+State 4:
+Corresponding symbol is INT_TYPE
+<datatype> ::= INT_TYPE .
+
+
+
+State 5:
+Corresponding symbol is IDENTIFIER
+<assignment> ::= IDENTIFIER . EQUALS <expression>
+<function_call> ::= IDENTIFIER . OPEN_PAREN <expression_list> CLOSE_PAREN
+
+On EQUALS, go to 44
+On OPEN_PAREN, go to 6
+
+
+State 6:
+Corresponding symbol is OPEN_PAREN
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= IDENTIFIER OPEN_PAREN . <expression_list> CLOSE_PAREN
+<expression_list> ::=  .
+<expression_list> ::= . <expression>
+<expression_list> ::= . <expression_list> COMMA <expression>
+<expression> ::= . <expression> PLUS <term>
+<expression> ::= . <expression> MINUS <term>
+<expression> ::= . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <expression_list>, go to 42
+On <expression>, go to 27
+On <term>, go to 21
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 7:
+Corresponding symbol is OPEN_BRACKET
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<expression_list> ::=  .
+<expression_list> ::= . <expression>
+<expression_list> ::= . <expression_list> COMMA <expression>
+<expression> ::= . <expression> PLUS <term>
+<expression> ::= . <expression> MINUS <term>
+<expression> ::= . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+<list> ::= OPEN_BRACKET . <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <expression_list>, go to 40
+On <expression>, go to 27
+On <term>, go to 21
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 8:
+Corresponding symbol is OPEN_PAREN
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<expression> ::= . <expression> PLUS <term>
+<expression> ::= . <expression> MINUS <term>
+<expression> ::= . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<factor> ::= OPEN_PAREN . <expression> CLOSE_PAREN
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <expression>, go to 38
+On <term>, go to 21
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 9:
+Corresponding symbol is FALSE_VALUE
+<factor> ::= FALSE_VALUE .
+
+
+
+State 10:
+Corresponding symbol is TRUE_VALUE
+<factor> ::= TRUE_VALUE .
+
+
+
+State 11:
+Corresponding symbol is IDENTIFIER
+<function_call> ::= IDENTIFIER . OPEN_PAREN <expression_list> CLOSE_PAREN
+<factor> ::= IDENTIFIER .
+
+On OPEN_PAREN, go to 6
+
+
+State 12:
+Corresponding symbol is INTEGER
+<factor> ::= INTEGER .
+
+
+
+State 13:
+Corresponding symbol is FLOAT
+<factor> ::= FLOAT .
+
+
+
+State 14:
+Corresponding symbol is STRING
+<factor> ::= STRING .
+
+
+
+State 15:
+Corresponding symbol is PRINT
+<function_call> ::= PRINT . OPEN_PAREN <expression_list> CLOSE_PAREN
+
+On OPEN_PAREN, go to 16
+
+
+State 16:
+Corresponding symbol is OPEN_PAREN
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= PRINT OPEN_PAREN . <expression_list> CLOSE_PAREN
+<expression_list> ::=  .
+<expression_list> ::= . <expression>
+<expression_list> ::= . <expression_list> COMMA <expression>
+<expression> ::= . <expression> PLUS <term>
+<expression> ::= . <expression> MINUS <term>
+<expression> ::= . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <expression_list>, go to 36
+On <expression>, go to 27
+On <term>, go to 21
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 17:
+Corresponding symbol is <list>
+<factor> ::= <list> .
+
+
+
+State 18:
+Corresponding symbol is <datatype>
+<function_call> ::= <datatype> . OPEN_PAREN <expression_list> CLOSE_PAREN
+
+On OPEN_PAREN, go to 19
+
+
+State 19:
+Corresponding symbol is OPEN_PAREN
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= <datatype> OPEN_PAREN . <expression_list> CLOSE_PAREN
+<expression_list> ::=  .
+<expression_list> ::= . <expression>
+<expression_list> ::= . <expression_list> COMMA <expression>
+<expression> ::= . <expression> PLUS <term>
+<expression> ::= . <expression> MINUS <term>
+<expression> ::= . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <expression_list>, go to 32
+On <expression>, go to 27
+On <term>, go to 21
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 20:
+Corresponding symbol is <factor>
+<term> ::= <factor> .
+
+
+
+State 21:
+Corresponding symbol is <term>
+<expression> ::= <term> .
+<term> ::= <term> . MULT <factor>
+<term> ::= <term> . DIV <factor>
+
+On DIV, go to 25
+On MULT, go to 22
+
+
+State 22:
+Corresponding symbol is MULT
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<term> ::= <term> MULT . <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <factor>, go to 23
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 23:
+Corresponding symbol is <factor>
+<term> ::= <term> MULT <factor> .
+
+
+
+State 24:
+Corresponding symbol is <function_call>
+<factor> ::= <function_call> .
+
+
+
+State 25:
+Corresponding symbol is DIV
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<term> ::= <term> DIV . <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <factor>, go to 26
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 26:
+Corresponding symbol is <factor>
+<term> ::= <term> DIV <factor> .
+
+
+
+State 27:
+Corresponding symbol is <expression>
+<expression_list> ::= <expression> .
+<expression> ::= <expression> . PLUS <term>
+<expression> ::= <expression> . MINUS <term>
+
+On MINUS, go to 30
+On PLUS, go to 28
+
+
+State 28:
+Corresponding symbol is PLUS
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<expression> ::= <expression> PLUS . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <term>, go to 29
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 29:
+Corresponding symbol is <term>
+<expression> ::= <expression> PLUS <term> .
+<term> ::= <term> . MULT <factor>
+<term> ::= <term> . DIV <factor>
+
+On DIV, go to 25
+On MULT, go to 22
+
+
+State 30:
+Corresponding symbol is MINUS
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<expression> ::= <expression> MINUS . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <term>, go to 31
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 31:
+Corresponding symbol is <term>
+<expression> ::= <expression> MINUS <term> .
+<term> ::= <term> . MULT <factor>
+<term> ::= <term> . DIV <factor>
+
+On DIV, go to 25
+On MULT, go to 22
+
+
+State 32:
+Corresponding symbol is <expression_list>
+<function_call> ::= <datatype> OPEN_PAREN <expression_list> . CLOSE_PAREN
+<expression_list> ::= <expression_list> . COMMA <expression>
+
+On CLOSE_PAREN, go to 35
+On COMMA, go to 33
+
+
+State 33:
+Corresponding symbol is COMMA
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<expression_list> ::= <expression_list> COMMA . <expression>
+<expression> ::= . <expression> PLUS <term>
+<expression> ::= . <expression> MINUS <term>
+<expression> ::= . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <expression>, go to 34
+On <term>, go to 21
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 34:
+Corresponding symbol is <expression>
+<expression_list> ::= <expression_list> COMMA <expression> .
+<expression> ::= <expression> . PLUS <term>
+<expression> ::= <expression> . MINUS <term>
+
+On MINUS, go to 30
+On PLUS, go to 28
+
+
+State 35:
+Corresponding symbol is CLOSE_PAREN
+<function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN .
+
+
+
+State 36:
+Corresponding symbol is <expression_list>
+<function_call> ::= PRINT OPEN_PAREN <expression_list> . CLOSE_PAREN
+<expression_list> ::= <expression_list> . COMMA <expression>
+
+On CLOSE_PAREN, go to 37
+On COMMA, go to 33
+
+
+State 37:
+Corresponding symbol is CLOSE_PAREN
+<function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN .
+
+
+
+State 38:
+Corresponding symbol is <expression>
+<expression> ::= <expression> . PLUS <term>
+<expression> ::= <expression> . MINUS <term>
+<factor> ::= OPEN_PAREN <expression> . CLOSE_PAREN
+
+On MINUS, go to 30
+On PLUS, go to 28
+On CLOSE_PAREN, go to 39
+
+
+State 39:
+Corresponding symbol is CLOSE_PAREN
+<factor> ::= OPEN_PAREN <expression> CLOSE_PAREN .
+
+
+
+State 40:
+Corresponding symbol is <expression_list>
+<expression_list> ::= <expression_list> . COMMA <expression>
+<list> ::= OPEN_BRACKET <expression_list> . CLOSE_BRACKET
+
+On CLOSE_BRACKET, go to 41
+On COMMA, go to 33
+
+
+State 41:
+Corresponding symbol is CLOSE_BRACKET
+<list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET .
+
+
+
+State 42:
+Corresponding symbol is <expression_list>
+<function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> . CLOSE_PAREN
+<expression_list> ::= <expression_list> . COMMA <expression>
+
+On CLOSE_PAREN, go to 43
+On COMMA, go to 33
+
+
+State 43:
+Corresponding symbol is CLOSE_PAREN
+<function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN .
+
+
+
+State 44:
+Corresponding symbol is EQUALS
+<assignment> ::= IDENTIFIER EQUALS . <expression>
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<expression> ::= . <expression> PLUS <term>
+<expression> ::= . <expression> MINUS <term>
+<expression> ::= . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <expression>, go to 45
+On <term>, go to 21
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 45:
+Corresponding symbol is <expression>
+<assignment> ::= IDENTIFIER EQUALS <expression> .
+<expression> ::= <expression> . PLUS <term>
+<expression> ::= <expression> . MINUS <term>
+
+On MINUS, go to 30
+On PLUS, go to 28
+
+
+State 46:
+Corresponding symbol is FOR
+<for_loop> ::= FOR . IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+
+On IDENTIFIER, go to 47
+
+
+State 47:
+Corresponding symbol is IDENTIFIER
+<for_loop> ::= FOR IDENTIFIER . IN <expression> COLON <statement_list> ENDFOR
+
+On IN, go to 48
+
+
+State 48:
+Corresponding symbol is IN
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<expression> ::= . <expression> PLUS <term>
+<expression> ::= . <expression> MINUS <term>
+<expression> ::= . <term>
+<term> ::= . <factor>
+<term> ::= . <term> MULT <factor>
+<term> ::= . <term> DIV <factor>
+<factor> ::= . IDENTIFIER
+<factor> ::= . INTEGER
+<factor> ::= . FLOAT
+<factor> ::= . STRING
+<factor> ::= . TRUE_VALUE
+<factor> ::= . FALSE_VALUE
+<factor> ::= . OPEN_PAREN <expression> CLOSE_PAREN
+<factor> ::= . <function_call>
+<factor> ::= . <list>
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<for_loop> ::= FOR IDENTIFIER IN . <expression> COLON <statement_list> ENDFOR
+<list> ::= . OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+On <function_call>, go to 24
+On <expression>, go to 49
+On <term>, go to 21
+On <factor>, go to 20
+On <datatype>, go to 18
+On <list>, go to 17
+On PRINT, go to 15
+On STRING, go to 14
+On FLOAT, go to 13
+On INTEGER, go to 12
+On IDENTIFIER, go to 11
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+On TRUE_VALUE, go to 10
+On FALSE_VALUE, go to 9
+On OPEN_PAREN, go to 8
+On OPEN_BRACKET, go to 7
+
+
+State 49:
+Corresponding symbol is <expression>
+<expression> ::= <expression> . PLUS <term>
+<expression> ::= <expression> . MINUS <term>
+<for_loop> ::= FOR IDENTIFIER IN <expression> . COLON <statement_list> ENDFOR
+
+On MINUS, go to 30
+On PLUS, go to 28
+On COLON, go to 50
+
+
+State 50:
+Corresponding symbol is COLON
+<statement_list> ::= . <statement>
+<statement_list> ::= . <statement_list> <st_end> <statement>
+<statement> ::=  .
+<statement> ::= . <assignment>
+<statement> ::= . <for_loop>
+<statement> ::= . <function_call>
+<assignment> ::= . IDENTIFIER EQUALS <expression>
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<for_loop> ::= . FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+<for_loop> ::= FOR IDENTIFIER IN <expression> COLON . <statement_list> ENDFOR
+
+On <statement_list>, go to 55
+On <statement>, go to 54
+On <assignment>, go to 53
+On <function_call>, go to 52
+On <datatype>, go to 18
+On <for_loop>, go to 51
+On FOR, go to 46
+On PRINT, go to 15
+On IDENTIFIER, go to 5
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+
+
+State 51:
+Corresponding symbol is <for_loop>
+<statement> ::= <for_loop> .
+
+
+
+State 52:
+Corresponding symbol is <function_call>
+<statement> ::= <function_call> .
+
+
+
+State 53:
+Corresponding symbol is <assignment>
+<statement> ::= <assignment> .
+
+
+
+State 54:
+Corresponding symbol is <statement>
+<statement_list> ::= <statement> .
+
+
+
+State 55:
+Corresponding symbol is <statement_list>
+<statement_list> ::= <statement_list> . <st_end> <statement>
+<st_end> ::= . SEMICOLON
+<st_end> ::= . NEWLINE
+<for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> . ENDFOR
+
+On <st_end>, go to 59
+On ENDFOR, go to 58
+On SEMICOLON, go to 57
+On NEWLINE, go to 56
+
+
+State 56:
+Corresponding symbol is NEWLINE
+<st_end> ::= NEWLINE .
+
+
+
+State 57:
+Corresponding symbol is SEMICOLON
+<st_end> ::= SEMICOLON .
+
+
+
+State 58:
+Corresponding symbol is ENDFOR
+<for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR .
+
+
+
+State 59:
+Corresponding symbol is <st_end>
+<statement_list> ::= <statement_list> <st_end> . <statement>
+<statement> ::=  .
+<statement> ::= . <assignment>
+<statement> ::= . <for_loop>
+<statement> ::= . <function_call>
+<assignment> ::= . IDENTIFIER EQUALS <expression>
+<function_call> ::= . IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+<function_call> ::= . <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+<datatype> ::= . INT_TYPE
+<datatype> ::= . FLOAT_TYPE
+<datatype> ::= . STR_TYPE
+<datatype> ::= . BOOL_TYPE
+<for_loop> ::= . FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+
+On <statement>, go to 60
+On <assignment>, go to 53
+On <function_call>, go to 52
+On <datatype>, go to 18
+On <for_loop>, go to 51
+On FOR, go to 46
+On PRINT, go to 15
+On IDENTIFIER, go to 5
+On INT_TYPE, go to 4
+On FLOAT_TYPE, go to 3
+On STR_TYPE, go to 2
+On BOOL_TYPE, go to 1
+
+
+State 60:
+Corresponding symbol is <statement>
+<statement_list> ::= <statement_list> <st_end> <statement> .
+
+
+
+State 61:
+Corresponding symbol is <statement_list>
+<program> ::= <statement_list> .
+<statement_list> ::= <statement_list> . <st_end> <statement>
+<st_end> ::= . SEMICOLON
+<st_end> ::= . NEWLINE
+
+On <st_end>, go to 59
+On SEMICOLON, go to 57
+On NEWLINE, go to 56
+
+
+Parsing table:
+For state 0:
+For terminal ENDFOR, do reduce <statement> ::= <epsilon!>
+For terminal FOR, do shift to state 46
+For terminal PRINT, do shift to state 15
+For terminal IDENTIFIER, do shift to state 5
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal SEMICOLON, do reduce <statement> ::= <epsilon!>
+For terminal NEWLINE, do reduce <statement> ::= <epsilon!>
+For terminal END_OF_FILE, do reduce <statement> ::= <epsilon!>
+For nonterminal statement_list, goto state 61
+For nonterminal statement, goto state 54
+For nonterminal assignment, goto state 53
+For nonterminal function_call, goto state 52
+For nonterminal datatype, goto state 18
+For nonterminal for_loop, goto state 51
+
+For state 1:
+For terminal OPEN_PAREN, do reduce <datatype> ::= BOOL_TYPE
+
+For state 2:
+For terminal OPEN_PAREN, do reduce <datatype> ::= STR_TYPE
+
+For state 3:
+For terminal OPEN_PAREN, do reduce <datatype> ::= FLOAT_TYPE
+
+For state 4:
+For terminal OPEN_PAREN, do reduce <datatype> ::= INT_TYPE
+
+For state 5:
+For terminal EQUALS, do shift to state 44
+For terminal OPEN_PAREN, do shift to state 6
+
+For state 6:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal CLOSE_PAREN, do reduce <expression_list> ::= <epsilon!>
+For terminal OPEN_BRACKET, do shift to state 7
+For terminal CLOSE_BRACKET, do reduce <expression_list> ::= <epsilon!>
+For terminal COMMA, do reduce <expression_list> ::= <epsilon!>
+For nonterminal function_call, goto state 24
+For nonterminal expression_list, goto state 42
+For nonterminal expression, goto state 27
+For nonterminal term, goto state 21
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 7:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal CLOSE_PAREN, do reduce <expression_list> ::= <epsilon!>
+For terminal OPEN_BRACKET, do shift to state 7
+For terminal CLOSE_BRACKET, do reduce <expression_list> ::= <epsilon!>
+For terminal COMMA, do reduce <expression_list> ::= <epsilon!>
+For nonterminal function_call, goto state 24
+For nonterminal expression_list, goto state 40
+For nonterminal expression, goto state 27
+For nonterminal term, goto state 21
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 8:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal OPEN_BRACKET, do shift to state 7
+For nonterminal function_call, goto state 24
+For nonterminal expression, goto state 38
+For nonterminal term, goto state 21
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 9:
+For terminal ENDFOR, do reduce <factor> ::= FALSE_VALUE
+For terminal DIV, do reduce <factor> ::= FALSE_VALUE
+For terminal MULT, do reduce <factor> ::= FALSE_VALUE
+For terminal MINUS, do reduce <factor> ::= FALSE_VALUE
+For terminal PLUS, do reduce <factor> ::= FALSE_VALUE
+For terminal CLOSE_PAREN, do reduce <factor> ::= FALSE_VALUE
+For terminal CLOSE_BRACKET, do reduce <factor> ::= FALSE_VALUE
+For terminal COMMA, do reduce <factor> ::= FALSE_VALUE
+For terminal COLON, do reduce <factor> ::= FALSE_VALUE
+For terminal SEMICOLON, do reduce <factor> ::= FALSE_VALUE
+For terminal NEWLINE, do reduce <factor> ::= FALSE_VALUE
+For terminal END_OF_FILE, do reduce <factor> ::= FALSE_VALUE
+
+For state 10:
+For terminal ENDFOR, do reduce <factor> ::= TRUE_VALUE
+For terminal DIV, do reduce <factor> ::= TRUE_VALUE
+For terminal MULT, do reduce <factor> ::= TRUE_VALUE
+For terminal MINUS, do reduce <factor> ::= TRUE_VALUE
+For terminal PLUS, do reduce <factor> ::= TRUE_VALUE
+For terminal CLOSE_PAREN, do reduce <factor> ::= TRUE_VALUE
+For terminal CLOSE_BRACKET, do reduce <factor> ::= TRUE_VALUE
+For terminal COMMA, do reduce <factor> ::= TRUE_VALUE
+For terminal COLON, do reduce <factor> ::= TRUE_VALUE
+For terminal SEMICOLON, do reduce <factor> ::= TRUE_VALUE
+For terminal NEWLINE, do reduce <factor> ::= TRUE_VALUE
+For terminal END_OF_FILE, do reduce <factor> ::= TRUE_VALUE
+
+For state 11:
+For terminal ENDFOR, do reduce <factor> ::= IDENTIFIER
+For terminal DIV, do reduce <factor> ::= IDENTIFIER
+For terminal MULT, do reduce <factor> ::= IDENTIFIER
+For terminal MINUS, do reduce <factor> ::= IDENTIFIER
+For terminal PLUS, do reduce <factor> ::= IDENTIFIER
+For terminal OPEN_PAREN, do shift to state 6
+For terminal CLOSE_PAREN, do reduce <factor> ::= IDENTIFIER
+For terminal CLOSE_BRACKET, do reduce <factor> ::= IDENTIFIER
+For terminal COMMA, do reduce <factor> ::= IDENTIFIER
+For terminal COLON, do reduce <factor> ::= IDENTIFIER
+For terminal SEMICOLON, do reduce <factor> ::= IDENTIFIER
+For terminal NEWLINE, do reduce <factor> ::= IDENTIFIER
+For terminal END_OF_FILE, do reduce <factor> ::= IDENTIFIER
+
+For state 12:
+For terminal ENDFOR, do reduce <factor> ::= INTEGER
+For terminal DIV, do reduce <factor> ::= INTEGER
+For terminal MULT, do reduce <factor> ::= INTEGER
+For terminal MINUS, do reduce <factor> ::= INTEGER
+For terminal PLUS, do reduce <factor> ::= INTEGER
+For terminal CLOSE_PAREN, do reduce <factor> ::= INTEGER
+For terminal CLOSE_BRACKET, do reduce <factor> ::= INTEGER
+For terminal COMMA, do reduce <factor> ::= INTEGER
+For terminal COLON, do reduce <factor> ::= INTEGER
+For terminal SEMICOLON, do reduce <factor> ::= INTEGER
+For terminal NEWLINE, do reduce <factor> ::= INTEGER
+For terminal END_OF_FILE, do reduce <factor> ::= INTEGER
+
+For state 13:
+For terminal ENDFOR, do reduce <factor> ::= FLOAT
+For terminal DIV, do reduce <factor> ::= FLOAT
+For terminal MULT, do reduce <factor> ::= FLOAT
+For terminal MINUS, do reduce <factor> ::= FLOAT
+For terminal PLUS, do reduce <factor> ::= FLOAT
+For terminal CLOSE_PAREN, do reduce <factor> ::= FLOAT
+For terminal CLOSE_BRACKET, do reduce <factor> ::= FLOAT
+For terminal COMMA, do reduce <factor> ::= FLOAT
+For terminal COLON, do reduce <factor> ::= FLOAT
+For terminal SEMICOLON, do reduce <factor> ::= FLOAT
+For terminal NEWLINE, do reduce <factor> ::= FLOAT
+For terminal END_OF_FILE, do reduce <factor> ::= FLOAT
+
+For state 14:
+For terminal ENDFOR, do reduce <factor> ::= STRING
+For terminal DIV, do reduce <factor> ::= STRING
+For terminal MULT, do reduce <factor> ::= STRING
+For terminal MINUS, do reduce <factor> ::= STRING
+For terminal PLUS, do reduce <factor> ::= STRING
+For terminal CLOSE_PAREN, do reduce <factor> ::= STRING
+For terminal CLOSE_BRACKET, do reduce <factor> ::= STRING
+For terminal COMMA, do reduce <factor> ::= STRING
+For terminal COLON, do reduce <factor> ::= STRING
+For terminal SEMICOLON, do reduce <factor> ::= STRING
+For terminal NEWLINE, do reduce <factor> ::= STRING
+For terminal END_OF_FILE, do reduce <factor> ::= STRING
+
+For state 15:
+For terminal OPEN_PAREN, do shift to state 16
+
+For state 16:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal CLOSE_PAREN, do reduce <expression_list> ::= <epsilon!>
+For terminal OPEN_BRACKET, do shift to state 7
+For terminal CLOSE_BRACKET, do reduce <expression_list> ::= <epsilon!>
+For terminal COMMA, do reduce <expression_list> ::= <epsilon!>
+For nonterminal function_call, goto state 24
+For nonterminal expression_list, goto state 36
+For nonterminal expression, goto state 27
+For nonterminal term, goto state 21
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 17:
+For terminal ENDFOR, do reduce <factor> ::= <list>
+For terminal DIV, do reduce <factor> ::= <list>
+For terminal MULT, do reduce <factor> ::= <list>
+For terminal MINUS, do reduce <factor> ::= <list>
+For terminal PLUS, do reduce <factor> ::= <list>
+For terminal CLOSE_PAREN, do reduce <factor> ::= <list>
+For terminal CLOSE_BRACKET, do reduce <factor> ::= <list>
+For terminal COMMA, do reduce <factor> ::= <list>
+For terminal COLON, do reduce <factor> ::= <list>
+For terminal SEMICOLON, do reduce <factor> ::= <list>
+For terminal NEWLINE, do reduce <factor> ::= <list>
+For terminal END_OF_FILE, do reduce <factor> ::= <list>
+
+For state 18:
+For terminal OPEN_PAREN, do shift to state 19
+
+For state 19:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal CLOSE_PAREN, do reduce <expression_list> ::= <epsilon!>
+For terminal OPEN_BRACKET, do shift to state 7
+For terminal CLOSE_BRACKET, do reduce <expression_list> ::= <epsilon!>
+For terminal COMMA, do reduce <expression_list> ::= <epsilon!>
+For nonterminal function_call, goto state 24
+For nonterminal expression_list, goto state 32
+For nonterminal expression, goto state 27
+For nonterminal term, goto state 21
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 20:
+For terminal ENDFOR, do reduce <term> ::= <factor>
+For terminal DIV, do reduce <term> ::= <factor>
+For terminal MULT, do reduce <term> ::= <factor>
+For terminal MINUS, do reduce <term> ::= <factor>
+For terminal PLUS, do reduce <term> ::= <factor>
+For terminal CLOSE_PAREN, do reduce <term> ::= <factor>
+For terminal CLOSE_BRACKET, do reduce <term> ::= <factor>
+For terminal COMMA, do reduce <term> ::= <factor>
+For terminal COLON, do reduce <term> ::= <factor>
+For terminal SEMICOLON, do reduce <term> ::= <factor>
+For terminal NEWLINE, do reduce <term> ::= <factor>
+For terminal END_OF_FILE, do reduce <term> ::= <factor>
+
+For state 21:
+For terminal ENDFOR, do reduce <expression> ::= <term>
+For terminal DIV, do shift to state 25
+For terminal MULT, do shift to state 22
+For terminal MINUS, do reduce <expression> ::= <term>
+For terminal PLUS, do reduce <expression> ::= <term>
+For terminal CLOSE_PAREN, do reduce <expression> ::= <term>
+For terminal CLOSE_BRACKET, do reduce <expression> ::= <term>
+For terminal COMMA, do reduce <expression> ::= <term>
+For terminal COLON, do reduce <expression> ::= <term>
+For terminal SEMICOLON, do reduce <expression> ::= <term>
+For terminal NEWLINE, do reduce <expression> ::= <term>
+For terminal END_OF_FILE, do reduce <expression> ::= <term>
+
+For state 22:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal OPEN_BRACKET, do shift to state 7
+For nonterminal function_call, goto state 24
+For nonterminal factor, goto state 23
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 23:
+For terminal ENDFOR, do reduce <term> ::= <term> MULT <factor>
+For terminal DIV, do reduce <term> ::= <term> MULT <factor>
+For terminal MULT, do reduce <term> ::= <term> MULT <factor>
+For terminal MINUS, do reduce <term> ::= <term> MULT <factor>
+For terminal PLUS, do reduce <term> ::= <term> MULT <factor>
+For terminal CLOSE_PAREN, do reduce <term> ::= <term> MULT <factor>
+For terminal CLOSE_BRACKET, do reduce <term> ::= <term> MULT <factor>
+For terminal COMMA, do reduce <term> ::= <term> MULT <factor>
+For terminal COLON, do reduce <term> ::= <term> MULT <factor>
+For terminal SEMICOLON, do reduce <term> ::= <term> MULT <factor>
+For terminal NEWLINE, do reduce <term> ::= <term> MULT <factor>
+For terminal END_OF_FILE, do reduce <term> ::= <term> MULT <factor>
+
+For state 24:
+For terminal ENDFOR, do reduce <factor> ::= <function_call>
+For terminal DIV, do reduce <factor> ::= <function_call>
+For terminal MULT, do reduce <factor> ::= <function_call>
+For terminal MINUS, do reduce <factor> ::= <function_call>
+For terminal PLUS, do reduce <factor> ::= <function_call>
+For terminal CLOSE_PAREN, do reduce <factor> ::= <function_call>
+For terminal CLOSE_BRACKET, do reduce <factor> ::= <function_call>
+For terminal COMMA, do reduce <factor> ::= <function_call>
+For terminal COLON, do reduce <factor> ::= <function_call>
+For terminal SEMICOLON, do reduce <factor> ::= <function_call>
+For terminal NEWLINE, do reduce <factor> ::= <function_call>
+For terminal END_OF_FILE, do reduce <factor> ::= <function_call>
+
+For state 25:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal OPEN_BRACKET, do shift to state 7
+For nonterminal function_call, goto state 24
+For nonterminal factor, goto state 26
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 26:
+For terminal ENDFOR, do reduce <term> ::= <term> DIV <factor>
+For terminal DIV, do reduce <term> ::= <term> DIV <factor>
+For terminal MULT, do reduce <term> ::= <term> DIV <factor>
+For terminal MINUS, do reduce <term> ::= <term> DIV <factor>
+For terminal PLUS, do reduce <term> ::= <term> DIV <factor>
+For terminal CLOSE_PAREN, do reduce <term> ::= <term> DIV <factor>
+For terminal CLOSE_BRACKET, do reduce <term> ::= <term> DIV <factor>
+For terminal COMMA, do reduce <term> ::= <term> DIV <factor>
+For terminal COLON, do reduce <term> ::= <term> DIV <factor>
+For terminal SEMICOLON, do reduce <term> ::= <term> DIV <factor>
+For terminal NEWLINE, do reduce <term> ::= <term> DIV <factor>
+For terminal END_OF_FILE, do reduce <term> ::= <term> DIV <factor>
+
+For state 27:
+For terminal MINUS, do shift to state 30
+For terminal PLUS, do shift to state 28
+For terminal CLOSE_PAREN, do reduce <expression_list> ::= <expression>
+For terminal CLOSE_BRACKET, do reduce <expression_list> ::= <expression>
+For terminal COMMA, do reduce <expression_list> ::= <expression>
+
+For state 28:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal OPEN_BRACKET, do shift to state 7
+For nonterminal function_call, goto state 24
+For nonterminal term, goto state 29
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 29:
+For terminal ENDFOR, do reduce <expression> ::= <expression> PLUS <term>
+For terminal DIV, do shift to state 25
+For terminal MULT, do shift to state 22
+For terminal MINUS, do reduce <expression> ::= <expression> PLUS <term>
+For terminal PLUS, do reduce <expression> ::= <expression> PLUS <term>
+For terminal CLOSE_PAREN, do reduce <expression> ::= <expression> PLUS <term>
+For terminal CLOSE_BRACKET, do reduce <expression> ::= <expression> PLUS <term>
+For terminal COMMA, do reduce <expression> ::= <expression> PLUS <term>
+For terminal COLON, do reduce <expression> ::= <expression> PLUS <term>
+For terminal SEMICOLON, do reduce <expression> ::= <expression> PLUS <term>
+For terminal NEWLINE, do reduce <expression> ::= <expression> PLUS <term>
+For terminal END_OF_FILE, do reduce <expression> ::= <expression> PLUS <term>
+
+For state 30:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal OPEN_BRACKET, do shift to state 7
+For nonterminal function_call, goto state 24
+For nonterminal term, goto state 31
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 31:
+For terminal ENDFOR, do reduce <expression> ::= <expression> MINUS <term>
+For terminal DIV, do shift to state 25
+For terminal MULT, do shift to state 22
+For terminal MINUS, do reduce <expression> ::= <expression> MINUS <term>
+For terminal PLUS, do reduce <expression> ::= <expression> MINUS <term>
+For terminal CLOSE_PAREN, do reduce <expression> ::= <expression> MINUS <term>
+For terminal CLOSE_BRACKET, do reduce <expression> ::= <expression> MINUS <term>
+For terminal COMMA, do reduce <expression> ::= <expression> MINUS <term>
+For terminal COLON, do reduce <expression> ::= <expression> MINUS <term>
+For terminal SEMICOLON, do reduce <expression> ::= <expression> MINUS <term>
+For terminal NEWLINE, do reduce <expression> ::= <expression> MINUS <term>
+For terminal END_OF_FILE, do reduce <expression> ::= <expression> MINUS <term>
+
+For state 32:
+For terminal CLOSE_PAREN, do shift to state 35
+For terminal COMMA, do shift to state 33
+
+For state 33:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal OPEN_BRACKET, do shift to state 7
+For nonterminal function_call, goto state 24
+For nonterminal expression, goto state 34
+For nonterminal term, goto state 21
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 34:
+For terminal MINUS, do shift to state 30
+For terminal PLUS, do shift to state 28
+For terminal CLOSE_PAREN, do reduce <expression_list> ::= <expression_list> COMMA <expression>
+For terminal CLOSE_BRACKET, do reduce <expression_list> ::= <expression_list> COMMA <expression>
+For terminal COMMA, do reduce <expression_list> ::= <expression_list> COMMA <expression>
+
+For state 35:
+For terminal ENDFOR, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal DIV, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal MULT, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal MINUS, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal PLUS, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal CLOSE_PAREN, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal CLOSE_BRACKET, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal COMMA, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal COLON, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal SEMICOLON, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal NEWLINE, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal END_OF_FILE, do reduce <function_call> ::= <datatype> OPEN_PAREN <expression_list> CLOSE_PAREN
+
+For state 36:
+For terminal CLOSE_PAREN, do shift to state 37
+For terminal COMMA, do shift to state 33
+
+For state 37:
+For terminal ENDFOR, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal DIV, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal MULT, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal MINUS, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal PLUS, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal CLOSE_PAREN, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal CLOSE_BRACKET, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal COMMA, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal COLON, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal SEMICOLON, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal NEWLINE, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal END_OF_FILE, do reduce <function_call> ::= PRINT OPEN_PAREN <expression_list> CLOSE_PAREN
+
+For state 38:
+For terminal MINUS, do shift to state 30
+For terminal PLUS, do shift to state 28
+For terminal CLOSE_PAREN, do shift to state 39
+
+For state 39:
+For terminal ENDFOR, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal DIV, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal MULT, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal MINUS, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal PLUS, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal CLOSE_PAREN, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal CLOSE_BRACKET, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal COMMA, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal COLON, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal SEMICOLON, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal NEWLINE, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+For terminal END_OF_FILE, do reduce <factor> ::= OPEN_PAREN <expression> CLOSE_PAREN
+
+For state 40:
+For terminal CLOSE_BRACKET, do shift to state 41
+For terminal COMMA, do shift to state 33
+
+For state 41:
+For terminal ENDFOR, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal DIV, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal MULT, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal MINUS, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal PLUS, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal CLOSE_PAREN, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal CLOSE_BRACKET, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal COMMA, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal COLON, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal SEMICOLON, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal NEWLINE, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+For terminal END_OF_FILE, do reduce <list> ::= OPEN_BRACKET <expression_list> CLOSE_BRACKET
+
+For state 42:
+For terminal CLOSE_PAREN, do shift to state 43
+For terminal COMMA, do shift to state 33
+
+For state 43:
+For terminal ENDFOR, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal DIV, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal MULT, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal MINUS, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal PLUS, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal CLOSE_PAREN, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal CLOSE_BRACKET, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal COMMA, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal COLON, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal SEMICOLON, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal NEWLINE, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+For terminal END_OF_FILE, do reduce <function_call> ::= IDENTIFIER OPEN_PAREN <expression_list> CLOSE_PAREN
+
+For state 44:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal OPEN_BRACKET, do shift to state 7
+For nonterminal function_call, goto state 24
+For nonterminal expression, goto state 45
+For nonterminal term, goto state 21
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 45:
+For terminal ENDFOR, do reduce <assignment> ::= IDENTIFIER EQUALS <expression>
+For terminal MINUS, do shift to state 30
+For terminal PLUS, do shift to state 28
+For terminal SEMICOLON, do reduce <assignment> ::= IDENTIFIER EQUALS <expression>
+For terminal NEWLINE, do reduce <assignment> ::= IDENTIFIER EQUALS <expression>
+For terminal END_OF_FILE, do reduce <assignment> ::= IDENTIFIER EQUALS <expression>
+
+For state 46:
+For terminal IDENTIFIER, do shift to state 47
+
+For state 47:
+For terminal IN, do shift to state 48
+
+For state 48:
+For terminal PRINT, do shift to state 15
+For terminal STRING, do shift to state 14
+For terminal FLOAT, do shift to state 13
+For terminal INTEGER, do shift to state 12
+For terminal IDENTIFIER, do shift to state 11
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal TRUE_VALUE, do shift to state 10
+For terminal FALSE_VALUE, do shift to state 9
+For terminal OPEN_PAREN, do shift to state 8
+For terminal OPEN_BRACKET, do shift to state 7
+For nonterminal function_call, goto state 24
+For nonterminal expression, goto state 49
+For nonterminal term, goto state 21
+For nonterminal factor, goto state 20
+For nonterminal datatype, goto state 18
+For nonterminal list, goto state 17
+
+For state 49:
+For terminal MINUS, do shift to state 30
+For terminal PLUS, do shift to state 28
+For terminal COLON, do shift to state 50
+
+For state 50:
+For terminal ENDFOR, do reduce <statement> ::= <epsilon!>
+For terminal FOR, do shift to state 46
+For terminal PRINT, do shift to state 15
+For terminal IDENTIFIER, do shift to state 5
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal SEMICOLON, do reduce <statement> ::= <epsilon!>
+For terminal NEWLINE, do reduce <statement> ::= <epsilon!>
+For terminal END_OF_FILE, do reduce <statement> ::= <epsilon!>
+For nonterminal statement_list, goto state 55
+For nonterminal statement, goto state 54
+For nonterminal assignment, goto state 53
+For nonterminal function_call, goto state 52
+For nonterminal datatype, goto state 18
+For nonterminal for_loop, goto state 51
+
+For state 51:
+For terminal ENDFOR, do reduce <statement> ::= <for_loop>
+For terminal SEMICOLON, do reduce <statement> ::= <for_loop>
+For terminal NEWLINE, do reduce <statement> ::= <for_loop>
+For terminal END_OF_FILE, do reduce <statement> ::= <for_loop>
+
+For state 52:
+For terminal ENDFOR, do reduce <statement> ::= <function_call>
+For terminal SEMICOLON, do reduce <statement> ::= <function_call>
+For terminal NEWLINE, do reduce <statement> ::= <function_call>
+For terminal END_OF_FILE, do reduce <statement> ::= <function_call>
+
+For state 53:
+For terminal ENDFOR, do reduce <statement> ::= <assignment>
+For terminal SEMICOLON, do reduce <statement> ::= <assignment>
+For terminal NEWLINE, do reduce <statement> ::= <assignment>
+For terminal END_OF_FILE, do reduce <statement> ::= <assignment>
+
+For state 54:
+For terminal ENDFOR, do reduce <statement_list> ::= <statement>
+For terminal SEMICOLON, do reduce <statement_list> ::= <statement>
+For terminal NEWLINE, do reduce <statement_list> ::= <statement>
+For terminal END_OF_FILE, do reduce <statement_list> ::= <statement>
+
+For state 55:
+For terminal ENDFOR, do shift to state 58
+For terminal SEMICOLON, do shift to state 57
+For terminal NEWLINE, do shift to state 56
+For nonterminal st_end, goto state 59
+
+For state 56:
+For terminal ENDFOR, do reduce <st_end> ::= NEWLINE
+For terminal FOR, do reduce <st_end> ::= NEWLINE
+For terminal PRINT, do reduce <st_end> ::= NEWLINE
+For terminal IDENTIFIER, do reduce <st_end> ::= NEWLINE
+For terminal INT_TYPE, do reduce <st_end> ::= NEWLINE
+For terminal FLOAT_TYPE, do reduce <st_end> ::= NEWLINE
+For terminal STR_TYPE, do reduce <st_end> ::= NEWLINE
+For terminal BOOL_TYPE, do reduce <st_end> ::= NEWLINE
+For terminal SEMICOLON, do reduce <st_end> ::= NEWLINE
+For terminal NEWLINE, do reduce <st_end> ::= NEWLINE
+For terminal END_OF_FILE, do reduce <st_end> ::= NEWLINE
+
+For state 57:
+For terminal ENDFOR, do reduce <st_end> ::= SEMICOLON
+For terminal FOR, do reduce <st_end> ::= SEMICOLON
+For terminal PRINT, do reduce <st_end> ::= SEMICOLON
+For terminal IDENTIFIER, do reduce <st_end> ::= SEMICOLON
+For terminal INT_TYPE, do reduce <st_end> ::= SEMICOLON
+For terminal FLOAT_TYPE, do reduce <st_end> ::= SEMICOLON
+For terminal STR_TYPE, do reduce <st_end> ::= SEMICOLON
+For terminal BOOL_TYPE, do reduce <st_end> ::= SEMICOLON
+For terminal SEMICOLON, do reduce <st_end> ::= SEMICOLON
+For terminal NEWLINE, do reduce <st_end> ::= SEMICOLON
+For terminal END_OF_FILE, do reduce <st_end> ::= SEMICOLON
+
+For state 58:
+For terminal ENDFOR, do reduce <for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+For terminal SEMICOLON, do reduce <for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+For terminal NEWLINE, do reduce <for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+For terminal END_OF_FILE, do reduce <for_loop> ::= FOR IDENTIFIER IN <expression> COLON <statement_list> ENDFOR
+
+For state 59:
+For terminal ENDFOR, do reduce <statement> ::= <epsilon!>
+For terminal FOR, do shift to state 46
+For terminal PRINT, do shift to state 15
+For terminal IDENTIFIER, do shift to state 5
+For terminal INT_TYPE, do shift to state 4
+For terminal FLOAT_TYPE, do shift to state 3
+For terminal STR_TYPE, do shift to state 2
+For terminal BOOL_TYPE, do shift to state 1
+For terminal SEMICOLON, do reduce <statement> ::= <epsilon!>
+For terminal NEWLINE, do reduce <statement> ::= <epsilon!>
+For terminal END_OF_FILE, do reduce <statement> ::= <epsilon!>
+For nonterminal statement, goto state 60
+For nonterminal assignment, goto state 53
+For nonterminal function_call, goto state 52
+For nonterminal datatype, goto state 18
+For nonterminal for_loop, goto state 51
+
+For state 60:
+For terminal ENDFOR, do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+For terminal SEMICOLON, do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+For terminal NEWLINE, do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+For terminal END_OF_FILE, do reduce <statement_list> ::= <statement_list> <st_end> <statement>
+
+For state 61:
+For terminal SEMICOLON, do shift to state 57
+For terminal NEWLINE, do shift to state 56
+For terminal END_OF_FILE, do ACCEPT.
+For nonterminal st_end, goto state 59
+
